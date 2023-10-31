@@ -1,54 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int main(int argc, char *argv[]){
 
-
-
-int main() {
-    char operacao;
-    float num1, num2, resultado;
-
-    do {
-        printf("Escolha uma operacao (+, -, *, /) ou 'q' para sair: ");
-        scanf(" %c", &operacao);
-
-        if (operacao == 'q') {
-            break;
-        }
-
-        printf("Digite o primeiro numero: ");
-        scanf("%f", &num1);
-
-        printf("Digite o segundo numero: ");
-        scanf("%f", &num2);
-
-        switch (operacao) {
-            case '+':
-                resultado = num1 + num2;
-                break;
-            case '-':
-                resultado = num1 - num2;
-                break;
-            case '*':
-                resultado = num1 * num2;
-                break;
-            case '/':
-                if (num2 != 0) {
-                    resultado = num1 / num2;
-                } else {
-                    printf("Erro: divisao por zero!\n");
-                    continue;
-                }
-                break;
-            default:
-                printf("Operacao invalida!\n");
-                continue;
-        }
-
-        printf("O resultado da operacao %c e %.2f\n", operacao, resultado);
-
-    } while (1);
+	int lista[10];
+	int i;
+	for (i = 0; i<10; i++){
+	printf("Digite um numero para a posicao %d: ",i);
+	scanf("%d",&lista[i]);
+	lista[i] = lista[i] * 2;
+	}
+	printf("Valores dobrados: \n");
+	for(i = 0; i<10;i++){
+		printf("Posicao %d: %d\n",i,lista[i]);
+	}
 
     return 0;
 }
